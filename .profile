@@ -29,4 +29,9 @@ export XDG_CURRENT_DESKTOP="KDE"
 
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+export GOPATH=${HOME}/go
+export PATH="$GOPATH/bin:$PATH"

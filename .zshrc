@@ -2,15 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/maiquel/.oh-my-zsh
+export ZSH=/home/maiquel/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
 #ZSH_THEME="amuse"
-ZSH_THEME="avit"
-
+#ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -87,10 +86,59 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-
 export XDG_CURRENT_DESKTOP="KDE"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
 export RUST_SRC_PATH=/home/maiquel/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+
+export PATH="$HOME/node_modules/.bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+export GOPATH=${HOME}/go
+export PATH="$GOPATH/bin:$PATH"
+
+export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH=$HOME/.pub-cache/bin:$PATH
+export DOTNET_ROOT=/opt/dotnet
+
+autoload -Uz compinit
+compinit
+setopt completeinword
+
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
+#LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
+#export LS_COLORS
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+#zstyle ':completion:*' menu select=long
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+plugins=(zsh-syntax-highlighting)
+source /home/maiquel/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+setopt AUTO_PUSHD
+
+TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
+'avg shared (code):         %X KB'$'\n'\
+'avg unshared (data/stack): %D KB'$'\n'\
+'total (sum):               %K KB'$'\n'\
+'max memory:                %M MB'$'\n'\
+'page faults from disk:     %F'$'\n'\
+'other page faults:         %R'
+
+
+#export PATH=home/maiquel/emsdk-portable:/home/maiquel/emsdk-portable/clang/fastcomp/build_incoming_64/bin:/home/maiquel/emsdk-portable/node/8.9.1_64bit/bin:/home/maiquel/emsdk-portable/emscripten/incoming:$PATH

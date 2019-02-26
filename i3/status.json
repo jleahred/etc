@@ -1,0 +1,11 @@
+[
+  {"block": "focused_window", "max-width": 40},
+  {"block": "pacman", "interval": 6000},
+  {"block": "disk_space", "path": "/", "alias": "/", "type": "available", "unit": "GB", "interval": 60},
+  {"block": "temperature", "interval": 10, "collapsed": false},
+  {"block": "memory", "type":"memory", "format_mem":"{Mup}%", "format_swap":"{SUp}%"},
+  {"block": "cpu", "interval": 2},
+  {"block": "load", "interval": 2, "format": "{1m}"},
+  {"block": "sound"},
+  {"block": "time", "interval": 60, "format": "%a %d/%m %R"}
+]
